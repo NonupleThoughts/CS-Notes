@@ -723,6 +723,13 @@ public class Test {
         System.out.println(a1.show(b)); // A and A
         System.out.println(a1.show(c)); // A and A
         System.out.println(a1.show(d)); // A and D
+        //这里注意
+        //一个对象有哪些方法，是由声明的类型决定，而不是实例化的类型决定
+        //因此a2有的方法是show(D),show(A)
+        //但是a2引用B类型的变量，且B类中含有show(A)函数，使得a2的show(A)方法被B类的show(A)方法覆盖
+        //最终在调用a2.show(b)时返回的是"B and A"
+        //同样的，调用a2.show(a1)时返回的也是"B and A"
+        //参考：https://blog.csdn.net/gol_phing/article/details/50774247
         System.out.println(a2.show(b)); // B and A
         System.out.println(a2.show(c)); // B and A
         System.out.println(a2.show(d)); // A and D
