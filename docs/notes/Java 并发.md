@@ -258,6 +258,9 @@ public void run() {
 }
 ```
 
+yield的本质是把当前线程重新置入抢CPU时间的”队列”<br/>
+参考https://blog.csdn.net/weixin_38553453/article/details/72921797
+
 # 四、中断
 
 一个线程执行完毕之后会自动结束，如果在运行过程中发生异常也会提前结束。
